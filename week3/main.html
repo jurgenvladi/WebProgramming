@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inviona's News</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #282483;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="logo.png" alt="News Logo">
+                <h1>Inviona's News</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main.html" class="active">Home</a></li>
+                <li><a href="arsimi-i-larte.html">Arsimi i Lartë</a></li>
+                <li><a href="arsimi-baze.html">Arsimi Bazë</a></li>
+                <li><a href="arsimi-mesem.html">Arsimi i Mesëm</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-title-container">
+        <h2 class="page-title">Lajmet e Fundit</h2>
+    </div>
+
+    <main>
+        <div class="news-container">
+            <!-- News articles will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Inviona's News - Të gjitha të drejtat e rezervuara</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

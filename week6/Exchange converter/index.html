@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchange Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img
+        src="https://i.ibb.co/rvJd2XR/rate.png"
+        alt="Exchange Rate Calculator"
+        class="money-img"
+      />
+      <h1>Exchange Rate Calculator</h1>
+      <p>Choose the currency and the amount to get the exchange rate</p>
+      <div class="container">
+        <div class="currency">
+          <select id="currency-one">
+            <option value="EUR" selected>🇪🇺 EUR</option>
+            <option value="ALL">🇦🇱 ALL</option>
+            <option value="USD">🇺🇸 USD</option>
+            <option value="GBP">🇬🇧 GBP</option>
+            <option value="JPY">🇯🇵 JPY</option>
+            <option value="CAD">🇨🇦 CAD</option>
+            <option value="CHF">🇨🇭 CHF</option>
+          </select>
+          <input
+            type="number"
+            id="amount-one"
+            placeholder="0"
+            value="1"
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <div class="swap-rate-container">
+          <button class="btn" id="swap">
+            Swap
+          </button>
+          <div class="rate" id="rate"></div>
+        </div>
+
+        <div class="currency">
+          <select id="currency-two">
+            <option value="EUR">🇪🇺 EUR</option>
+            <option value="ALL" selected>🇦🇱 ALL</option>
+            <option value="USD">🇺🇸 USD</option>
+            <option value="GBP">🇬🇧 GBP</option>
+            <option value="JPY">🇯🇵 JPY</option>
+            <option value="CAD">🇨🇦 CAD</option>
+            <option value="CHF">🇨🇭 CHF</option>
+          </select>
+          <input
+            type="number"
+            id="amount-two"
+            placeholder="0"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Subscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        label {
+            flex: 1;
+            margin-right: 10px;
+        }
+        input, select, textarea {
+            flex: 2;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            font-size: small;
+        }
+        .radio-group label {
+            margin-left: 10px;
+        }
+        .textarea-group {
+            display: block;
+            margin-top: 10px;
+        }
+        .textarea-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Revista Subscription</h1>
+    <form>
+        <div class="form-group">
+            <label for="first-name">Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="magazine">Select a Magazine:</label>
+            <select id="magazine" name="magazine">
+                <option>Newsweek</option>
+                <option>National Geographic</option>
+                <option>Forbes</option>
+                <option>Scientific American</option>
+                <option>The Economist</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Subscription Duration:</label>
+            <div class="radio-group">
+                <input type="radio" id="one-year" name="subscription" value="1-year" checked>
+                <label for="one-year">1-year</label>
+                <input type="radio" id="two-year" name="subscription" value="2-year">
+                <label for="two-year">2-years</label>
+            </div>
+        </div>
+        
+        <div class="textarea-group">
+            <label for="comments">Additional comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Send your order</button>
+    </form>
+</body>
+</html>

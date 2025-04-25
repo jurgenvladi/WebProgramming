@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurgen Vladi - CV</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #333;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        
+        .profile-img {
+            flex-shrink: 0;
+        }
+
+        img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .bio {
+            text-align: left;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 32px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        li {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            min-width: 100px;
+        }
+        
+        .skill-level {
+            display: inline-block;
+            width: 150px;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            margin-left: 15px;
+            position: relative;
+        }
+        
+        .skill-level-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .excellent {
+            width: 95%;
+        }
+        
+        .very-good {
+            width: 85%;
+        }
+        
+        .good {
+            width: 70%;
+        }
+        
+        .basic {
+            width: 40%;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            text-decoration: none;
+            color: white;
+            background-color: var(--primary-color);
+            padding: 10px 18px;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .education, .experience {
+            margin-bottom: 15px;
+        }
+        
+        .edu-item, .exp-item {
+            margin-bottom: 20px;
+        }
+        
+        .period {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .institution, .role {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .description {
+            margin-top: 8px;
+        }
+        
+        .contact-info {
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .bio {
+                text-align: center;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-img">
+                <img src="picture.jpeg" alt="Jurgen Vladi">
+            </div>
+            <div class="bio">
+                <h1>Jurgen Vladi</h1>
+                <p class="tagline">Software Developer & Tech Enthusiast</p>
+                <div class="contact-info">
+                    <div class="info-grid">
+                        <span class="info-label">Email:</span>
+                        <span>jurvladi@gmail.com</span>
+                        
+                        <span class="info-label">Phone:</span>
+                        <span>+355 69 11 11 111</span>
+                        
+                        <span class="info-label">Location:</span>
+                        <span>Albania</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+                        <a href="https://github.com" target="_blank" class="social-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>Dedicated software developer with a passion for creating efficient and user-friendly applications. Skilled in multiple programming languages and frameworks with a focus on delivering high-quality solutions.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>
+                    <span class="skill-name">Python</span>
+                    <div class="skill-level"><div class="skill-level-fill excellent"></div></div>
+                    <span>Excellent</span>
+                </li>
+                <li>
+                    <span class="skill-name">HTML, CSS</span>
+                    <div class="skill-level"><div class="skill-level-fill very-good"></div></div>
+                    <span>Very Good</span>
+                </li>
+                <li>
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-level"><div class="skill-level-fill good"></div></div>
+                    <span>Good</span>
+                </li>
+                <li>
+                    <span class="skill-name">Java</span>
+                    <div class="skill-level"><div class="skill-level-fill good"></div></div>
+                    <span>Good</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="edu-item">
+                    <div class="period">2020-2024</div>
+                    <div class="institution">University Name</div>
+                    <div>Bachelor's Degree in Computer Science</div>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="period">2019</div>
+                    <div class="institution">Online Learning Platform</div>
+                    <div>Web Development Certification</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Work Experience</h2>
+            <div class="experience">
+                <div class="exp-item">
+                    <div class="period">2022 - Present</div>
+                    <div class="role">Junior Developer</div>
+                    <div>Tech Company, Tirana</div>
+                    <p class="description">Developing and maintaining web applications, collaborating with cross-functional teams, and implementing new features.</p>
+                </div>
+                
+                <div class="exp-item">
+                    <div class="period">2021 - 2022</div>
+                    <div class="role">Intern</div>
+                    <div>Software Solutions Ltd.</div>
+                    <p class="description">Assisted in front-end development tasks and learned industry best practices.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>
+                    <span class="skill-name">Albanian</span>
+                    <div class="skill-level"><div class="skill-level-fill excellent"></div></div>
+                    <span>Native</span>
+                </li>
+                <li>
+                    <span class="skill-name">English</span>
+                    <div class="skill-level"><div class="skill-level-fill excellent"></div></div>
+                    <span>Fluent</span>
+                </li>
+                <li>
+                    <span class="skill-name">Italian</span>
+                    <div class="skill-level"><div class="skill-level-fill basic"></div></div>
+                    <span>Basic</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Interests</h2>
+            <p>Web development, Machine Learning, Open Source Projects, Photography, Hiking</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Operations Calculator</title>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2980b9;
+      --success-color: #2ecc71;
+      --background-color: #f7f9fc;
+      --card-color: #ffffff;
+      --text-color: #333333;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    h1 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-color);
+    }
+    
+    h2 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .section {
+      background-color: var(--card-color);
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: transform 0.2s ease;
+    }
+    
+    .section:hover {
+      transform: translateY(-3px);
+    }
+    
+    input {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+    
+    button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: rgba(46, 204, 113, 0.1);
+      border-left: 4px solid var(--success-color);
+      border-radius: 4px;
+      display: none;
+    }
+    
+    .result.active {
+      display: block;
+    }
+    
+    .section-number {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      margin-right: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .input-group input {
+      flex: 1;
+    }
+    
+    @media (max-width: 480px) {
+      .input-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Number Operations Calculator</h1>
+
+  <div class="section">
+    <h2><span class="section-number">1</span>Add Two Numbers</h2>
+    <div class="input-group">
+      <input type="number" id="num1" placeholder="First number">
+      <input type="number" id="num2" placeholder="Second number">
+    </div>
+    <button onclick="addNumbers()">Calculate Sum</button>
+    <div class="result" id="sumResult"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="section-number">2</span>Sum of Digits</h2>
+    <input type="number" id="digitInput" placeholder="Enter a number">
+    <button onclick="sumDigits()">Calculate Digit Sum</button>
+    <div class="result" id="digitSumResult"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="section-number">3</span>Inverse of a Number</h2>
+    <input type="number" id="inverseInput" placeholder="Enter a number">
+    <button onclick="getInverse()">Show Inverse</button>
+    <div class="result" id="inverseResult"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="section-number">4</span>Even or Odd</h2>
+    <input type="number" id="evenOddInput" placeholder="Enter a number">
+    <button onclick="checkEvenOdd()">Check</button>
+    <div class="result" id="evenOddResult"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="section-number">5</span>Find Maximum</h2>
+    <div class="input-group">
+      <input type="number" id="maxNum1" placeholder="First number">
+      <input type="number" id="maxNum2" placeholder="Second number">
+    </div>
+    <button onclick="findMaximum()">Find Maximum</button>
+    <div class="result" id="maxResult"></div>
+  </div>
+
+  <script>
+    function addNumbers() {
+      const a = Number(document.getElementById("num1").value);
+      const b = Number(document.getElementById("num2").value);
+      const result = document.getElementById("sumResult");
+      
+      if (isNaN(a) || isNaN(b)) {
+        result.innerText = "Please enter valid numbers";
+      } else {
+        result.innerText = "Sum: " + (a + b);
+      }
+      
+      result.classList.add("active");
+    }
+
+    function sumDigits() {
+      const numStr = document.getElementById("digitInput").value;
+      const result = document.getElementById("digitSumResult");
+      
+      if (!numStr) {
+        result.innerText = "Please enter a number";
+        result.classList.add("active");
+        return;
+      }
+      
+      const num = Math.abs(Number(numStr));
+      let sum = 0;
+      
+      // Convert to string to handle large numbers better
+      const digits = num.toString().replace('.', '');
+      
+      for (let i = 0; i < digits.length; i++) {
+        sum += parseInt(digits[i]);
+      }
+      
+      result.innerText = "Sum of digits: " + sum;
+      result.classList.add("active");
+    }
+
+    function getInverse() {
+      const num = Number(document.getElementById("inverseInput").value);
+      const result = document.getElementById("inverseResult");
+      
+      if (isNaN(num)) {
+        result.innerText = "Please enter a valid number";
+      } else if (num === 0) {
+        result.innerText = "Cannot divide by zero!";
+      } else {
+        result.innerText = "Inverse: " + (1 / num).toFixed(6);
+      }
+      
+      result.classList.add("active");
+    }
+
+    function checkEvenOdd() {
+      const numStr = document.getElementById("evenOddInput").value;
+      const result = document.getElementById("evenOddResult");
+      
+      if (!numStr) {
+        result.innerText = "Please enter a number";
+      } else {
+        const num = Number(numStr);
+        const classification = num % 2 === 0 ? "Even" : "Odd";
+        result.innerText = "The number is: " + classification;
+      }
+      
+      result.classList.add("active");
+    }
+    
+    function findMaximum() {
+      const a = Number(document.getElementById("maxNum1").value);
+      const b = Number(document.getElementById("maxNum2").value);
+      const result = document.getElementById("maxResult");
+      
+      if (isNaN(a) || isNaN(b)) {
+        result.innerText = "Please enter valid numbers";
+      } else {
+        const max = a > b ? a : b;
+        result.innerText = "Maximum number: " + max;
+      }
+      
+      result.classList.add("active");
+    }
+    
+    // Clear results when inputs change
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', function() {
+        const section = this.closest('.section');
+        const result = section.querySelector('.result');
+        result.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
